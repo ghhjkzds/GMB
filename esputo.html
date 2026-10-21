@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muestra de esputo UE</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-case="ESPUTO">
+
+<header class="hero py-4 text-center">
+  <div class="container">
+    <h1 class="h2 fw-bold mb-2">🧫 Esputo UE sin historia clínica ni informe médico</h1>
+    <a class="btn btn-light btn-sm" href="index.html">← Volver al inicio</a>
+  </div>
+</header>
+
+<main class="container my-4">
+  <section class="mb-4">
+    <h2 class="h5 mb-3">Imágenes (placeholders)</h2>
+    <div class="row g-3">
+      <div class="col-md-4"><div class="image-placeholder"><span class="emoji">🧫</span><div class="hint">Imagen 1: tubo de esputo</div></div></div>
+      <div class="col-md-4"><div class="image-placeholder"><span class="emoji">🔶</span><div class="hint">Imagen 2: rombo UN3373</div></div></div>
+      <div class="col-md-4"><div class="image-placeholder"><span class="emoji">📄</span><div class="hint">Imagen 3: datos de envío</div></div></div>
+    </div>
+  </section>
+
+  <section class="mb-4">
+    <div class="card shadow-sm"><div class="card-body">
+      <h3 class="h5" id="dTitle"></h3>
+      <p id="dDesc" class="mb-2"></p>
+      <div class="row">
+        <div class="col-md-6"><h6>Requisitos de embalaje</h6><ul id="dReq" class="mb-0"></ul></div>
+        <div class="col-md-6"><h6>Marcado y documentación</h6><ul id="dMark" class="mb-0"></ul></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="mb-5" id="simSection">
+    <h2 class="h4 mb-3">Simulador de embalaje</h2>
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <div class="card shadow-sm"><div class="card-body">
+          <div class="stage">
+            <div class="pack-flow">
+              <div class="box primary empty" id="primary" data-level="1">
+                <span class="lbl" style="font-size:.65rem">Primario</span><div class="closed-lid"></div>
+                <div class="absorbent" id="absPri" style="width:80%"></div>
+                <div id="primaryContent" class="slot"></div>
+              </div>
+              <div class="flow-arrow">➡️</div>
+              <div class="box secondary empty" id="secondary" data-level="2">
+                <span class="lbl">Secundario</span><div class="closed-lid"></div>
+                <div class="absorbent" id="absSec"></div>
+                <div id="secondaryContent" class="slot"></div>
+              </div>
+              <div class="flow-arrow">➡️</div>
+              <div class="box outer empty" id="outer" data-level="3">
+                <span class="lbl">Exterior</span><div class="closed-lid"></div>
+                <span class="label-un" id="unLabel"></span>
+                <div id="outerContent" class="slot"></div>
+              </div>
+            </div>
+          </div>
+          <p class="text-center text-muted small mb-0">Arrastra el elemento desde el panel lateral hacia el embalaje indicado.</p>
+        </div></div>
+      </div>
+      <div class="col-lg-5">
+        <div class="card shadow-sm mb-3"><div class="card-body">
+          <h6 class="mb-2">Banco de trabajo</h6>
+          <div id="supply" class="supply-panel mb-3"></div>
+          <div class="d-flex gap-2 mb-3 align-items-center" id="dots"></div>
+          <div class="alert alert-info mb-3" id="instruction"></div>
+        </div></div>
+        <div id="feedback"></div>
+        <button class="btn btn-outline-secondary w-100" id="resetBtn">↺ Reiniciar</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
